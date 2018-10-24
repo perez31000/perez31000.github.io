@@ -1,5 +1,74 @@
 /* CSS Document */
 
-a{
-	color:red;
+/* Charte couleurs :
+	marron light : #A6703D
+	marron : #8f3700
+	orange pastel : #EA8E27
+	bleu pastel : #5D97A8
+	blanc : #FCFCFC
+*/
+
+/*Mise en place du menu */
+#menu{
+    text-align: center;
+    font-size: 1em;
+    vertical-align: middle;
+    display: block;
+    justify-content: center;
+    background-color: #a6703d;
+    /*border-radius: 20px;*/
+    padding: 20px;
+	line-height: 150px;
+}
+
+.container-fluid {
+    padding-right: 0!important;
+    padding-left: 0!important;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.menu_item{
+	font-family: 'Roboto Condensed', sans-serif;	
+}
+.menu_item a{
+	    color: white;
+    font-size: 1.2em;
+}
+
+.menu_item a:hover{
+	color:#5a3818;
+	text-decoration: none;
+}
+
+.logo {
+	width: 150px;
+}
+
+/* To all pages */
+h1{
+	font-family: 'Roboto Condensed', sans-serif!important;
+	text-align: center;
+}
+
+.separateur{
+	width:50%;
+	display:block;
+	margin:auto;
+}
+
+.content{
+	background: #ffffff url(images/carreaux1.png) repeat;
+}
+
+.bloc_principal{
+	background-color:#fcfcfc;
+}
+
+
+
+/* Home page */
+
+.photo_profil img{
+	width:100%;
 }
