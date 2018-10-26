@@ -72,3 +72,16 @@ h1{
 .photo_profil img{
 	width:100%;
 }
+
+
+/*Animation*/
+
+.animation{
+	animation: fadein 2s ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
