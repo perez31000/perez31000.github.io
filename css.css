@@ -57,9 +57,9 @@ h1{
 	margin:auto;
 }
 
-.content{
+/*.content{
 	background: #ffffff url(images/carreaux1.png) repeat;
-}
+}*/
 
 .bloc_principal{
 	background-color:#fcfcfc;
@@ -84,4 +84,28 @@ h1{
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
+}
+
+/* test carroussel */
+
+#wrapper {
+width: 600px;
+height: 400px;
+overflow: hidden;
+}
+#carrousel {
+width: 600px;
+height: 400px;
+overflow: hidden;
+position: absolute;
+}
+#carrousel img {
+display: block;
+float: left;
+}
+#pagination {
+display: block;
+width: 600px;
+height: 100px;
+overflow: hidden;
 }
