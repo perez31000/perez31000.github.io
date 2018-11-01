@@ -73,39 +73,737 @@ h1{
 	width:100%;
 }
 
+/* Bloc_cg */
 
-/*Animation*/
+@-webkit-keyframes slidein {
+  0% {
+    top: -400px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
+@keyframes slidein {
+  0% {
+    top: -400px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
+@-webkit-keyframes slideout {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -400px;
+    opacity: 0;
+  }
+}
+@keyframes slideout {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -400px;
+    opacity: 0;
+  }
+}
+
+body #scene {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 1200px;
+  height: 500px;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  overflow: hidden;
+}
+body #scene #left-zone {
+  background: #fff;
+  height: 75%;
+  flex-grow: 0;
+  display: flex;
+  width: 300px;
+  align-items: center;
+  justify-content: left;
+}
+
+body #scene #other-zone {
+  background: #fff;
+  height: 75%;
+  flex-grow: 0;
+  display: flex;
+  width: 300px;
+  align-items: center;
+  justify-content: right;
+}
+
+body #scene #left-zone .list {
+  display: flex;
+  list-style: none;
+  align-content: stretch;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+}
+
+body #scene #other-zone .list {
+  display: flex;
+  list-style: none;
+  align-content: stretch;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+}
+
+body #scene #left-zone .list li.item input[type="radio"] {
+  display: none;
+}
+
+body #scene #other-zone .list li.item input[type="radio"] {
+  display: none;
+}
+
+body #scene #left-zone .list li.item input[type="radio"] ~ label {
+  display: block;
+  opacity: 0.5;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+
+body #scene #other-zone .list li.item input[type="radio"] ~ label {
+  display: block;
+  opacity: 0.5;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+
+/*body #scene #left-zone .list li.item input[type="radio"] ~ label:first-letter {
+  text-transform: uppercase;
+}*/
+
+body #scene #left-zone .list li.item input[type="radio"] ~ label:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+body #scene #other-zone .list li.item input[type="radio"] ~ label:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_verrechia:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+  background-image: url("images/icon verrechia.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+
+body #scene #other-zone .list li.item input[type="radio"] ~ label.label_come:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+  background-image: url("images/petit come.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_alpha:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+  background-image: url("images/Voyance.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+
+body #scene #other-zone .list li.item input[type="radio"] ~ label.label_atdg:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+  background-image: url("images/atdg.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_vignalats:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+  background-image: url("images/vignalats fermetures.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+
+body #scene #other-zone .list li.item input[type="radio"] ~ label.label_ccr:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+  background-image: url("images/CCR Schmitt icon.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_bonfiglio:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+  background-image: url("images/croix.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+
+body #scene #other-zone .list li.item input[type="radio"] ~ label.label_carburauto:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+  background-image: url("images/carburauto.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_aluferm:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+  background-image: url("images/aluferm.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+
+body #scene #other-zone .list li.item input[type="radio"] ~ label.label_favereaux:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+  background-image: url("images/favereaux-icon.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_vignolles:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+  background-image: url("images/vignolles icon.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+
+body #scene #other-zone .list li.item input[type="radio"] ~ label.label_alarmes:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+  background-image: url("images/Alarmes-conseils-systemes-icon.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_enseignes:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+  background-image: url("images/BA-Enseignes-icon.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+
+body #scene #other-zone .list li.item input[type="radio"] ~ label.label_tavenaux:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+  background-image: url("images/tavenaux-fermetures-icon.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ label.label_marchand:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+  background-image: url("images/le marchand sas.png");
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+
+body #scene #left-zone .list li.item input[type="radio"] ~ .content {
+  position: absolute;
+  left: 280px;
+  top: -400px;
+  width: 650px;
+  height: 400px;
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+  -webkit-animation-name: slideout;
+          animation-name: slideout;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+body #scene #other-zone .list li.item input[type="radio"] ~ .content {
+  position: absolute;
+  left: 275px;
+  top: -400px;
+  width: 650px;
+  height: 400px;
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+  -webkit-animation-name: slideout;
+          animation-name: slideout;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_verrechia .picto {
+  height: 220px;
+  width: 450px;
+  background-image: url("images/mid-verrechia-froid.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_verrechia h1 {
+  color: #3497D2;
+}
+
+body #scene #other-zone .list li.item input[type="radio"] ~ .content.content_come .picto {
+  height: 220px;
+  width: 450px;
+  background-image: url("images/mid-petit-come.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body #scene #other-zone .list li.item input[type="radio"] ~ .content.content_come h1 {
+  color: #B3CE55;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_alpha .picto {
+  height: 220px;
+  width: 450px;
+  background-image: url("images/mid-professeur-alpha.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_alpha h1 {
+  color: #F6BB62;
+}
+
+body #scene #other-zone .list li.item input[type="radio"] ~ .content.content_atdg .picto {
+  height: 220px;
+  width: 450px;
+  background-image: url("images/mid-atdg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body #scene #other-zone .list li.item input[type="radio"] ~ .content.content_atdg h1 {
+  color: #1E73BE;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_vignalats .picto {
+  height: 220px;
+  width: 450px;
+  background-image: url("images/mid-vignalats.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_vignalats h1 {
+  color: #016648;
+}
+
+body #scene #other-zone .list li.item input[type="radio"] ~ .content.content_ccr .picto {
+  height: 220px;
+  width: 450px;
+  background-image: url("images/mid-ccr.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body #scene #other-zone .list li.item input[type="radio"] ~ .content.content_ccr h1 {
+  color: #E40385;
+}
+
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_bonfiglio .picto {
+  height: 220px;
+  width: 450px;
+  background-image: url("images/mid-bonfiglio.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_bonfiglio h1 {
+  color: #784566;
+}
+
+body #scene #other-zone .list li.item input[type="radio"] ~ .content.content_carburauto .picto {
+  height: 220px;
+  width: 450px;
+  background-image: url("images/mid-carburauto.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body #scene #other-zone .list li.item input[type="radio"] ~ .content.content_carburauto h1 {
+  color: #FF4B01;
+}
+
+
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_aluferm .picto {
+  height: 220px;
+  width: 450px;
+  background-image: url("images/mid-aluferm.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_aluferm h1 {
+  color: #302D7A;
+}
+
+body #scene #other-zone .list li.item input[type="radio"] ~ .content.content_favereaux .picto {
+  height: 220px;
+  width: 450px;
+  background-image: url("images/mid-favereaux.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body #scene #other-zone .list li.item input[type="radio"] ~ .content.content_favereaux h1 {
+  color: #03A1F9;
+}
+
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_vignolles .picto {
+  height: 220px;
+  width: 450px;
+  background-image: url("images/mid-setec.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_vignolles h1 {
+  color: #3C8186;
+}
+
+body #scene #other-zone .list li.item input[type="radio"] ~ .content.content_alarmes.picto {
+  height: 220px;
+  width: 450px;
+  background-image: url("images/mid-alarmes.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body #scene #other-zone .list li.item input[type="radio"] ~ .content.content_alarmes h1 {
+  color: #C90016;
+}
+
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_enseignes .picto {
+  height: 220px;
+  width: 450px;
+  background-image: url("images/mid-ba-enseignes.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_enseignes h1 {
+  color: #8F4884;
+}
+
+body #scene #other-zone .list li.item input[type="radio"] ~ .content.content_tavenaux .picto {
+  height: 220px;
+  width: 450px;
+  background-image: url("images/mid Tavenaux-Fermeture-.JPG");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body #scene #other-zone .list li.item input[type="radio"] ~ .content.content_tavenaux h1 {
+  color: #F78E00;
+}
+
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_marchand .picto {
+  height: 220px;
+  width: 450px;
+  background-image: url("images/mid-marchand.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body #scene #left-zone .list li.item input[type="radio"] ~ .content.content_marchand h1 {
+  color: #FEED01;
+}
+/*body #scene #left-zone .list li.item input[type="radio"] ~ .content h1:first-letter {
+  text-transform: uppercase;
+}*/
+
+body #scene #left-zone .list li.item input[type="radio"] ~ .content p {
+  max-width: 50%;
+  text-align: center;
+}
+
+body #scene #other-zone .list li.item input[type="radio"] ~ .content p {
+  max-width: 50%;
+  text-align: center;
+}
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label {
+  opacity: 1;
+  -webkit-animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+body #scene #other-zone .list li.item input[type="radio"]:checked ~ label {
+  opacity: 1;
+  -webkit-animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_verrechia {
+  color: #3497D2;
+  border-right: solid 4px #3497D2;
+}
+
+body #scene #other-zone .list li.item input[type="radio"]:checked ~ label.label_come {
+  color: #b3ce55;
+  border-left: solid 4px #b3ce55;
+}
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_alpha {
+  color: #F6BB62;
+  border-right: solid 4px #F6BB62;
+}
+
+body #scene #other-zone .list li.item input[type="radio"]:checked ~ label.label_atdg {
+  color: #1E73BE;
+  border-left: solid 4px #1E73BE;
+}
+
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_vignalats {
+  color: #016648;
+  border-right: solid 4px #016648;
+}
+
+body #scene #other-zone .list li.item input[type="radio"]:checked ~ label.label_ccr {
+  color: #016648;
+  border-left: solid 4px #E40385;
+}
+
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_bonfiglio {
+  color: #784566;
+  border-right: solid 4px #784566;
+}
+
+body #scene #other-zone .list li.item input[type="radio"]:checked ~ label.label_ccr {
+  color: #FF4B01;
+  border-left: solid 4px #FF4B01;
+}
+
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_aluferm {
+  color: #302D7A;
+  border-right: solid 4px #302D7A;
+}
+
+body #scene #other-zone .list li.item input[type="radio"]:checked ~ label.label_favereaux {
+  color: #03A1F9;
+  border-left: solid 4px #03A1F9;
+}
+
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_vignolles {
+  color: #3C8186;
+  border-right: solid 4px #3C8186;
+}
+
+body #scene #other-zone .list li.item input[type="radio"]:checked ~ label.label_alarmes {
+  color: #C90016;
+  border-left: solid 4px #C90016;
+}
+
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_enseignes {
+  color: #8F4884;
+  border-right: solid 4px #8F4884;
+}
+
+body #scene #other-zone .list li.item input[type="radio"]:checked ~ label.label_tavenaux {
+  color: #F78E00;
+  border-left: solid 4px #F78E00;
+}
+
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ label.label_marchand {
+  color: #feed01;
+  border-right: solid 4px #feed01;
+}
+
+body #scene #left-zone .list li.item input[type="radio"]:checked ~ .content {
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	margin-top: 50px;
+}
+
+body #scene #other-zone .list li.item input[type="radio"]:checked ~ .content {
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	margin-top: 50px;
+}
+
+body #scene #middle-border {
+  background-color: #eee;
+  height: 75%;
+  flex-grow: 1;
+  max-width: 2px;
+  z-index: 0;
+}
+body #scene #other-border {
+  background-color: #eee;
+  height: 75%;
+  flex-grow: 1;
+  max-width: 2px;
+  z-index: 0;
+}
+body #scene #right-zone {
+  background: #fff;
+  height: 100%;
+  flex-grow: 3;
+}
+
+
+
+
+
+/*Animation Carrés
 
 .animation{
+	-moz-animation: fadein 2s ease-in-out;
+	-moz-animation-iteration-count: infinite;
+	-o-animation: fadein 2s ease-in-out;
+	-o-animation-iteration-count: infinite;
+	-webkit-animation: fadein 2s ease-in-out;
+	-webkit-animation-iteration-count: infinite;
+	-ms-animation: fadein 2s ease-in-out;
+	-ms-animation-iteration-count: infinite; 
 	animation: fadein 2s ease-in-out;
 	animation-iteration-count: infinite;
+	background-color: rgba(255,255,255,0.00);
 }
 
 @keyframes fadein {
     from { opacity: 0; }
-    to   { opacity: 1; }
+    to   { opacity: 0.5; }
 }
 
-/* test carroussel */
+/* Firefox < 16 
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 0.5; }
+}
 
-#wrapper {
-width: 600px;
-height: 400px;
-overflow: hidden;
+/* Safari, Chrome and Opera > 12.1 
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 0.5; }
 }
-#carrousel {
-width: 600px;
-height: 400px;
-overflow: hidden;
-position: absolute;
+
+/* Internet Explorer 
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 0.5; }
 }
-#carrousel img {
-display: block;
-float: left;
-}
-#pagination {
-display: block;
-width: 600px;
-height: 100px;
-overflow: hidden;
-}
+
+/* Opera < 12.1 
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 0.5; }
+}*/

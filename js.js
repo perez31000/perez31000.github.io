@@ -1,107 +1,34 @@
-// JavaScript Document
+// Animation fond du site
 
-// TEST CARROUSSEL
+/*function generate() {
+  var div = document.getElementById("div");
+	div.innerHTML = '';
+  var section = document.createElement('section');
+  for(var i = 1; i < 40; i++) {
+  	var elt = document.createElement('div');
+    elt.id = 'div' + i;
+    elt.style.width = Math.random() * 50 + "px";
+    elt.style.height = Math.random() * 50 + "px";
+    elt.style.borderRadius = Math.random() * 50 + "px";
+    elt.style.backgroundColor = '#' + Math.random().toString(16).substr(2,6);
+    elt.style.position = "absolute";
+    elt.style.opacity = "0.1";
+    elt.style.top = Math.random() * 1000 + "px";
+    elt.style.left = Math.random() * 1000 + "px";
+    elt.classList.add('animation');
+    section.append(elt);
+  }
+  div.append(section);
+}
+setInterval(generate, 2000);*/
 
-$(document).ready(function(){
-    
-var $carrousel = $('#carrousel'), // on cible le bloc du carrousel
-    $img = $('#carrousel img'), // on cible les images contenues dans le carrousel
-    indexImg = $img.length - 1, // on définit l'index du dernier élément
-    i = 0, // on initialise un compteur
-    $currentImg = $img.eq(i); // enfin, on cible l'image courante, qui possède l'index i (0 pour l'instant)
+// Animation carrousel 
 
-$img.css('display', 'none'); // on cache les images
-$currentImg.css('display', 'block'); // on affiche seulement l'image courante
+var i = 0;
+var selected = documet.getElementById("icon_site"+i);
 
-$carrousel.append('<div class="controls"> <span class="prev">Precedent</span> <span class="next">Suivant</span> </div>');
-
-$('.next').click(function(){ // image suivante
-
-    i++; // on incrémente le compteur
-
-    if( i <= indexImg ){
-        $img.css('display', 'none'); // on cache les images
-        $currentImg = $img.eq(i); // on définit la nouvelle image
-        $currentImg.css('display', 'block'); // puis on l'affiche
-    }
-    else{
-        i = indexImg;
-    }
-
-});
-
-$('.prev').click(function(){ // image précédente
-
-    i--; // on décrémente le compteur, puis on réalise la même chose que pour la fonction "suivante"
-
-    if( i >= 0 ){
-        $img.css('display', 'none');
-        $currentImg = $img.eq(i);
-        $currentImg.css('display', 'block');
-    }
-    else{
-        i = 0;
-    }
-
-});
-
-function slideImg(){
-    setTimeout(function(){ // on utilise une fonction anonyme
-						
-        if(i < indexImg){ // si le compteur est inférieur au dernier index
-	    i++; // on l'incrémente
-	}
-	else{ // sinon, on le remet à 0 (première image)
-	    i = 0;
-	}
-
-	$img.css('display', 'none');
-
-	$currentImg = $img.eq(i);
-	$currentImg.css('display', 'block');
-
-	slideImg(); // on oublie pas de relancer la fonction à la fin
-
-    }, 7000); // on définit l'intervalle à 7000 millisecondes (7s)
+if(selected === :active){
+	document.getElementById("sample_site"+i).classList.remove("hidden").classList.add("visible");
 }
 
-slideImg(); // enfin, on lance la fonction une première fois
 
-});
-
-
-$(function() {
-     	$('#pagination').hover(
-       function() {
-       	$('#carrousel').trigger( 'pause' );
-       }, function() {
-       	$('#carrousel').trigger( 'play' );
-       }
-     	);
- 
-     	$('#carrousel').carouFredSel({
-       scroll: {
-       	fx: 'crossfade'
-       },
-       auto: {
-       	onBefore: function( oldI, newI ) {
-         $('#thumbnails').trigger( 'slideTo', [ '#thumbnails img[alt='+ newI.attr( 'alt' ) +']', -2 ] );
-       	}
-       }
-     	});
- 
-     	$('#thumbnails').carouFredSel({
-       auto: false,
-       items: {
-       	start: -2
-       }
-     	});
- 
-     	$('#thumbnails img').click(function() {
-       $('#thumbnails').trigger( 'slideTo', [ this, -2 ] );
-       $('#carrousel').trigger( 'slideTo', [ '#carrousel img[alt='+ $(this).attr( 'alt' ) +']' ] );
- 
-     	}).css( 'cursor', 'pointer' );
-     });
-
-});
