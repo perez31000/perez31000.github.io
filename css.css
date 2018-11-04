@@ -57,9 +57,9 @@ h1{
 	margin:auto;
 }
 
-/*.content{
-	background: #ffffff url(images/carreaux1.png) repeat;
-}*/
+.full_content{
+	background:url(images/background-coffe.jpg) fixed no-repeat;
+}
 
 .bloc_principal{
 	background-color:#fcfcfc;
@@ -73,7 +73,21 @@ h1{
 	width:100%;
 }
 
-/* Bloc_cg */
+/* bloc CV */
+
+#bloc_cv{
+    background-color: rgba(166,112,61,1);
+    color: white;
+	text-align:center;
+}
+
+.competences li{
+	list-style:none;
+}
+
+/* Bloc_rw */
+
+/* Merci à Olivier PASCAL pour la template du carrousel https://codepen.io/pascaloliv/pen/LVZaeE?editors=1100 */
 
 @-webkit-keyframes slidein {
   0% {
@@ -759,6 +773,63 @@ body #scene #right-zone {
   flex-grow: 3;
 }
 
+
+/* Bloc_ création graphiques */
+
+#bloc_cg {
+  background-color: #ece9e2;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+div.photoset {
+  padding: 2px;
+  background-color: #ffffff;
+  width: 86%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+	justify-content:space-around;
+}
+div.photoset .photo {
+  position: relative;
+	margin-top:20px;
+}
+
+.photoset .pad-logo{
+	padding-top: 5%;
+}
+
+@media screen and (max-width: 700px) {
+  div.photoset .photo {
+    min-width: calc(100% / 2);
+  }
+}
+@media screen and (max-width: 460px) {
+  div.photoset .photo {
+    min-width: 100%;
+  }
+}
+
+
+/*div.photoset .photo:after {
+  padding-top: 83.33333%;
+  display: block;
+  content: "";
+}
+div.photoset .photo:before {
+  z-index: 2;
+  position: absolute;
+  content: "";
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  box-shadow: inset 0 0 0 2px #ffffff;
+}*/
 
 
 
